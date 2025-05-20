@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore stylish baby clothes and jewelry at Hirnaz Collections starting at just ₹100. Shop now!">
+  <meta name="keywords" content="baby clothes, jewelry, affordable fashion, Hirnaz Collections">
+  <title>Hirnaz Collections</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+ 
+<header>
+  <div class="header-container">
+    <img src="Images/logo-hero/image logo.jpg" alt="Hirnaz Collections Logo" class="logo">
+    <div class="title-content">
+      <h1>Hirnaz Collections</h1>
+      <h3>Baby Clothes, Women's Jewellery & More  — all budget-friendly!</h3>
+      <!--<p>Price Range: ₹50 - ₹1000</p>-->
+    </div>
+  </div>
+  
+  <nav>
+    <div class="nav-left">
+       <button id="searchButton" onclick="searchProducts()">Search</button>
+      <input type="text" id="searchInput" placeholder="Enter product name..." oninput="searchProducts()" />
+    </div>
+    <div class="nav-right">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero">
+  <div class="hero-content">
+    <h1>Welcome to Hirnaz Collections</h1>
+    <p>Stylish Baby Clothes & Women's Jewellery Starting at Just ₹100!</p>
+    <a href="#home" class="hero-cta">Shop Now</a>
+  </div>
+</section>
+
+<!-- Offer Banner -->
+<div class="offer-banner">
+ <!-- <p>Limited Time Offer: Flat 10% Off on Your First Order!</p> -->
+</div>
+
+<!-- Home Section -->
+<section id="home">
+  <h2>Our Products</h2>
+  <div class="category-filter">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('baby-clothes')">Baby Clothes</button>
+    <button onclick="filterProducts('jewellery')">Women's Jewellery</button>
+  </div>
+  <div class="product-grid">
+    <!-- Static products hata diye, ab yeh dynamically populate hoga -->
+  </div>
+
+  <!-- Best Sellers -->
+  <div class="best-sellers">
+    <h3>Our Best Sellers</h3>
+    <div class="best-seller-grid">
+      <!-- Yeh bhi dynamically populate hoga -->
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="testimonials">
+    <h3>What Our Customers Say</h3>
+    <div class="testimonial-item">
+      <p>"Amazing quality! My baby loves the clothes!"</p>
+      <span>– Priya, Banswara</span>
+    </div>
+    <div class="testimonial-item">
+      <p>"Affordable jewellery and super fast delivery!"</p>
+      <span>– Ritu, Banswara</span>
+    </div>
+  </div>
+
+  <!-- Newsletter Signup -->
+  <div class="newsletter">
+    <h3>Stay Updated with Our Latest Offers!</h3>
+    <form id="newsletterForm">
+      <!--<input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button> -->
+    </form>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2>Place Your Order</h2>
+    <form id="orderForm">
+    <label for="productName">Product Name</label>
+    <input type="text" id="productName" name="productName" readonly/>
+
+    <label for="productPrice">Price</label>
+    <input type="text" id="productPrice" name="productPrice" readonly/>
+
+    <label for="customerName">Your Name</label>
+    <input type="text" id="customerName" name="customerName" required/>
+
+    <label for="phoneNumber">Phone Number</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="(\+91)?[0-9]{10}"/>
+
+    <label for="address">Address</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+
+    <button type="submit">Submit Order</button>
+    </form>
+    <p id="thankYouMsg" style="display:none; color:green;">Thank you for your order!</p>
+  </div>
+</div>
+
+   
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <h3>Welcome to "Hirnaz Collections"</h3>
+  <p>Hirnaz Collections — Hum lekar aaye hain ek unique collection jahan aapko milega:
+
+    style aur comfort ek saath!</p>
+
+    <p>✨ Elegant aur budget-friendly jewellery for women's,</p>
+    <p>🍼 Comfortable, stylish baby clothes for your angel.</p>
+
+    
+    <p>“Ek hi jagah par mom aur baby dono ke liye pyaar bhare products.”</p>
+
+    <p> Har product mein quality, care aur affordability ka perfect combination hai.
+    Jewellery collection mein aapko milenge classy designs jo daily wear aur special occasions dono ke liye perfect hain.
+    Baby wear mein soft fabrics, cute prints aur safe stitching — taaki aapke bacche rahein hamesha comfortable aur stylish.</p>
+
+    <p>Hirnaz Collections ka mission hai aapke har moment ko banaye aur bhi khaas — chahe woh ek gift ho, ya ek everyday outfit.
+    Hamari team har product ko pyaar se select karti hai — jaise aap apne parivaar ke liye chunte hain.</p>
+
+    <p>Thank you for supporting a small dream with a big heart 💖
+    Shop with love. Style with care.</p>
+
+  
+  <div class="about-benefits">
+    <div class="benefit-item">
+      <i class="fas fa-truck"></i>
+      <span>Local Delivery Available – Banswara mein fast delivery!</span>
+    </div>
+    <div class="benefit-item">
+      <i class="fab fa-whatsapp"></i>
+      <span>Direct WhatsApp Order – Ek message mein order karo!</span>
+    </div>
+    <div class="benefit-item">
+      <i class="fas fa-check-circle"></i>
+      <span>Quality Checked Products – Har product carefully checked!</span>
+    </div>
+    <div class="benefit-item">
+      <i class="fas fa-star"></i>
+      <span>Limited Designs – Unique aur fast-selling items!</span>
+    </div>
+  </div>
+  
+  <p class="about-cta"><a href="#home">Aaj hi explore karein aur apne bacchon ke liye perfect outfit chune!</a></p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-details">
+    <div class="contact-item">
+      <i class="fab fa-whatsapp"></i>
+      <a href="https://wa.me/919587949813" target="_blank">WhatsApp: 9587949813</a>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <a href="https://maps.app.goo.gl/your-location-link" target="_blank">Location: Banswara, Rajasthan</a>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:Hirnazcollections@gmail.com" target="_blank">Email: Hirnazcollections@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-clock"></i>
+      <span>Business Hours: 9 AM - 6 PM (Mon-Sat)</span>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-truck"></i>
+      <span>Local Delivery Available - WhatsApp us for details!</span>
+    </div>
+    <!-- Social Media Links (Optional) -->
+    <div class="contact-item">
+      <i class="fab fa-instagram"></i>
+      <a href="https://instagram.com/hirnazcollections" target="_blank">Follow us on Instagram</a>
+    </div>
+    <p>Have a question? Need help with your order?
+      We’re here to help! 💬
+    </p>
+    
+    <p>Hirnaz Collections se jude kisi bhi sawal, order update, ya feedback ke liye aap humse kabhi bhi contact kar sakte hain.</p>
+      
+    <p>You can also message us on Instagram: @hirnazcollections</p>
+
+    💡Hum koshish karte hain ki aapke message ka reply 24 hours ke andar ho jaye.
+
+    Thank you for shopping with us!
+    Aapka support hamare liye priceless hai 💖
+  
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

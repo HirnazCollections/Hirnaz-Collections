@@ -1,0 +1,711 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fefefe;
+}
+
+/* Header base styling */
+header {
+  background-color: #e672ac;
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+/* Container with logo and title */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Logo on left */
+.logo {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+
+/* Title content stays centered */
+.title-content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title-content h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #0f0e0e;
+  font-family: "DM Serif Text", serif;
+}
+
+.title-content h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.title-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Navigation menu */
+nav {
+  background: #fff;
+  border-top: 1px solid #1a1919;
+  border-bottom: 1px solid #1a1919;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 10px; /* Space between elements */
+  align-items: center;
+}
+
+.nav-left span {
+  color: black; /* Change to black */
+  font-weight: bold;
+}
+
+.nav-left input {
+  padding: 5px;
+  width: 150px; /* Adjust width as needed */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black; /* Change to black */
+  font-weight: bold;
+}
+nav a:hover {
+  background-color: #f3aed0;
+  border-radius: 0px;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-left, .nav-right {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-left input {
+    width: 90%; /* Full width on mobile */
+    max-width: 200px;
+  }
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  border-color: #1c1c1c;
+}
+
+.search-bar input {
+  padding: 8px;
+  width: 300px;
+  max-width: 90%;
+  border: 1px solid #141414;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #f697c6;
+}
+
+/* Search section ka style */
+#search {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+#search h2 {
+  text-align: center;
+  color: #ff69b4;
+}
+
+/* Responsive changes */
+@media (max-width: 768px) {
+  .logo {
+    position: static;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-content h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 60px;
+  }
+}
+#hero {
+  background: url('Images/logo-hero/hero\ section.jpg') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Overlay for readability */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  transform: translateY(70px);
+}
+
+.hero-content h1 {
+  font-size: 2.2em;
+  margin-bottom: 5px;
+  font-family: "DM Serif Text", serif;
+}
+
+.hero-content p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.hero-cta {
+  background-color: #ff69b4;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-cta:hover {
+  background-color: #e0559a;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 200px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .hero-content {
+    padding-top: 20px; /* Mobile mein thoda kam padding */
+    /* Ya agar Approach 3 use kar rahe ho, toh: */
+    transform: translateY(5px); /* Mobile mein thoda kam movement */
+  }
+}
+/* offer banner section */
+.offer-banner {
+  background-color: #ff69b4;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  margin: 0px 0;
+  border-radius: 5px;
+}
+
+.offer-banner p {
+  margin: 0;
+  font-weight: bold;
+}
+ /* home section */
+h2 {
+  text-align: center;
+  color: #ff69b4;
+}
+
+.category-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.category-filter button {
+  padding: 8px 16px;
+  background-color: #a39a9a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-filter button:hover {
+  background-color: #ff69b4;
+  color: white;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap; /* Laptop view ke liye wrap enable karo */
+  justify-content: center; /* Center align for laptop view */
+  padding: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: space-between;
+}
+
+/* Mobile view ke liye horizontal scroll */
+@media (max-width: 768px) {
+  .product-grid {
+    flex-wrap: nowrap; /* Mobile mein side-by-side */
+    overflow-x: auto; /* Horizontal scroll */
+    justify-content: flex-start; /* Left se start */
+    white-space: nowrap; /* Ek line mein */
+  }
+
+  .product-card {
+    width: 200px;
+    margin: 10px;
+    flex-shrink: 0; /* Cards shrink nahi honge */
+  }
+
+  /* Optional: Scrollbar styling for mobile */
+  .product-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .product-grid::-webkit-scrollbar-thumb {
+    background-color: #ff69b4;
+    border-radius: 10px;
+  }
+}
+
+/* Laptop view ke liye vertical scroll (default behavior) */
+@media (min-width: 769px) {
+  .product-grid {
+    flex-wrap: wrap; /* Ensure wrap for laptop view */
+    overflow-x: hidden; /* No horizontal scroll */
+    justify-content: center; /* Center align */
+    white-space: normal; /* Normal wrapping */
+  }
+
+  .product-card {
+    width: 200px;
+    margin: 10px;
+  }
+}
+
+.product-card img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.product-card h3,
+.product-card p {
+  margin: 5px 0;
+}
+
+/* Order Button */
+.order-button {
+  margin-top: auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff69b4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.order-button:hover {
+  background: #e0559a;
+}
+
+section {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+/* best seller section */
+.best-sellers h3 {
+  text-align: center;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.best-seller-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Baaki product-card ka CSS same rahega */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .best-seller-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    white-space: nowrap;
+  }
+
+  .product-card {
+    width: 200px;
+    margin: 10px;
+    flex-shrink: 0;
+  }
+}
+/* testimonials section */
+.testimonials {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.testimonials h3 {
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.testimonial-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px auto;
+  max-width: 500px;
+}
+
+.testimonial-item p {
+  color: #555;
+  font-style: italic;
+}
+
+.testimonial-item span {
+  color: #ff69b4;
+  font-weight: bold;
+}
+
+/* newsletter section */
+.newsletter {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.newsletter h3 {
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.newsletter button {
+  padding: 8px 16px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #e0559a;
+}
+
+/* About Section */
+#about h2 {
+  text-align: center;
+  color: #ff69b4;
+}
+
+#about h3 {
+  text-align: center;
+  color: #333;
+}
+
+#about p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.about-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.benefit-item i {
+  font-size: 20px;
+  color: #ff69b4;
+}
+
+.about-cta {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.about-cta a {
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #ff69b4;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: inline-block; /* Yeh ensure karta hai ki element wrap ho sake */
+  white-space: normal; /* Text ko wrap hone deta hai */
+  line-height: 1.4; /* Text ke beech thodi spacing deta hai agar wrap ho */
+}
+
+.about-cta a:hover {
+  background-color: #ff69b4;
+  color: white;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .about-cta {
+    margin-top: 15px; /* Thoda kam margin mobile mein */
+  }
+
+  .about-cta a {
+    font-size: 14px; /* Font size kam karo mobile mein */
+    padding: 8px 15px; /* Padding adjust karo */
+    white-space: normal; /* Ensure text wraps */
+    max-width: 90%; /* Button zyada wide na ho */
+    margin: 0 auto; /* Center align */
+  }
+
+  /* Parent container ke liye adjustments */
+  #about {
+    padding: 20px; /* Kam padding mobile mein */
+  }
+
+  #about p {
+    font-size: 14px; /* About section ke paragraphs ka font size bhi adjust karo */
+    line-height: 1.5;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #ff69b4;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.modal-content textarea {
+  resize: vertical;
+}
+
+.modal-content button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 15px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #e0559a;
+}
+
+.close-btn {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+.close-btn:hover {
+  color: #ff69b4;
+}
+/* contact section */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.contact-item i {
+  font-size: 20px;
+  color: #ff69b4;
+}
+
+.contact-item a, .contact-item span {
+  color: #555;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #ff69b4;
+  transition: color 0.3s ease;
+}
+
+.contact-cta {
+  text-align: center;
+  color: #ff69b4;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .contact-item {
+    font-size: 14px;
+  }
+
+  .contact-item i {
+    font-size: 18px;
+  }
+}
