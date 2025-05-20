@@ -183,7 +183,7 @@ nav a:hover {
   }
 }
 #hero {
-  background: url('Images/logo-hero/hero\ section.jpg') no-repeat center center/cover;
+  background: url('images/logo-hero/hero\ section.jpg') no-repeat center center/cover;
   height: 400px;
   display: flex;
   align-items: center;
