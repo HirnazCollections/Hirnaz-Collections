@@ -709,3 +709,11 @@ section {
     font-size: 18px;
   }
 }
+.policies { 
+  text-align: center; 
+  margin: 20px; 
+  padding: 10px; 
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+}
+
