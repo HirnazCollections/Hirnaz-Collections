@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore stylish baby clothes and jewelry at Hirnaz Collections starting at just ₹100. Shop now!">
+  <meta name="description" content="Explore stylish Baby clothes, Women's jewellery & More items at Hirnaz Collections starting at just ₹99. Shop now!">
   <meta name="keywords" content="baby clothes, jewelry, affordable fashion, Hirnaz Collections">
   <title>Hirnaz Collections</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-   <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QXBK151XX"></script>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1QXBK151XX');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1QXBK151XX');
   </script>
 </head>
 <body>
@@ -27,14 +26,13 @@
     <img src="images/logo-hero/image logo.jpg" alt="Hirnaz Collections Logo" class="logo">
     <div class="title-content">
       <h1>Hirnaz Collections</h1>
-      <h3>Baby Clothes, Women's Jewellery & More  — all budget-friendly!</h3>
-      <!--<p>Price Range: ₹50 - ₹1000</p>-->
+      <h3>Baby Clothes, Women's Jewellery & More items  — all budget-friendly!</h3>
     </div>
   </div>
   
   <nav>
     <div class="nav-left">
-       <button id="searchButton" onclick="searchProducts()">Search</button>
+      <button id="searchButton" onclick="searchProducts()">Search</button>
       <input type="text" id="searchInput" placeholder="Enter product name..." oninput="searchProducts()" />
     </div>
     <div class="nav-right">
@@ -49,14 +47,13 @@
 <section id="hero">
   <div class="hero-content">
     <h1>Welcome to Hirnaz Collections</h1>
-    <p>Stylish Baby Clothes & Women's Jewellery Starting at Just ₹100!</p>
+    <p>Stylish Baby Clothes & Women's Jewellery Starting at Just ₹99!</p>
     <a href="#home" class="hero-cta">Shop Now</a>
   </div>
 </section>
 
 <!-- Offer Banner -->
 <div class="offer-banner">
- <!-- <p>Limited Time Offer: Flat 10% Off on Your First Order!</p> -->
 </div>
 
 <!-- Home Section -->
@@ -68,14 +65,14 @@
     <button onclick="filterProducts('jewellery')">Women's Jewellery</button>
   </div>
   <div class="product-grid">
-    <!-- Static products hata diye, ab yeh dynamically populate hoga -->
+    <!-- Dynamically populated -->
   </div>
 
   <!-- Best Sellers -->
   <div class="best-sellers">
     <h3>Our Best Sellers</h3>
     <div class="best-seller-grid">
-      <!-- Yeh bhi dynamically populate hoga -->
+      <!-- Dynamically populated -->
     </div>
   </div>
 
@@ -96,8 +93,6 @@
   <div class="newsletter">
     <h3>Stay Updated with Our Latest Offers!</h3>
     <form id="newsletterForm">
-      <!--<input type="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button> -->
     </form>
   </div>
 </section>
@@ -108,57 +103,42 @@
     <span class="close-btn" id="closeModal">×</span>
     <h2>Place Your Order</h2>
     <form id="orderForm">
-    <label for="productName">Product Name</label>
-    <input type="text" id="productName" name="productName" readonly/>
+      <label for="productName">Product Name</label>
+      <input type="text" id="productName" name="productName" readonly/>
 
-    <label for="productPrice">Price</label>
-    <input type="text" id="productPrice" name="productPrice" readonly/>
+      <label for="productPrice">Price</label>
+      <input type="text" id="productPrice" name="productPrice" readonly/>
 
-    <label for="customerName">Your Name</label>
-    <input type="text" id="customerName" name="customerName" required/>
+      <label for="customerName">Your Name</label>
+      <input type="text" id="customerName" name="customerName" required/>
 
-    <label for="phoneNumber">Phone Number</label>
-    <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="(\+91)?[0-9]{10}"/>
+      <label for="phoneNumber">Phone Number</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="(\+91)?[0-9]{10}"/>
 
-    <label for="address">Address</label>
-    <textarea id="address" name="address" rows="3" required></textarea>
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
 
-    <button type="submit">Submit Order</button>
+      <button type="submit">Submit Order</button>
     </form>
     <p id="thankYouMsg" style="display:none; color:green;">Thank you for your order!</p>
   </div>
 </div>
 
-   
 <!-- About Section -->
 <section id="about">
   <h2>About Us</h2>
   <h3>Welcome to "Hirnaz Collections"</h3>
-  <p>Hirnaz Collections — Hum lekar aaye hain ek unique collection jahan aapko milega:
-
-    style aur comfort ek saath!</p>
-
-    <p>✨ Elegant aur budget-friendly jewellery for women's,</p>
-    <p>🍼 Comfortable, stylish baby clothes for your angel.</p>
-
-    
-    <p>“Ek hi jagah par mom aur baby dono ke liye pyaar bhare products.”</p>
-
-    <p> Har product mein quality, care aur affordability ka perfect combination hai.
-    Jewellery collection mein aapko milenge classy designs jo daily wear aur special occasions dono ke liye perfect hain.
-    Baby wear mein soft fabrics, cute prints aur safe stitching — taaki aapke bacche rahein hamesha comfortable aur stylish.</p>
-
-    <p>Hirnaz Collections ka mission hai aapke har moment ko banaye aur bhi khaas — chahe woh ek gift ho, ya ek everyday outfit.
-    Hamari team har product ko pyaar se select karti hai — jaise aap apne parivaar ke liye chunte hain.</p>
-
-    <p>Thank you for supporting a small dream with a big heart 💖
-    Shop with love. Style with care.</p>
-
-  
+  <p>Hirnaz Collections — Hum lekar aaye hain ek unique collection jahan aapko milega: style aur comfort ek saath!</p>
+  <p>✨ Elegant aur budget-friendly jewellery for women's,</p>
+  <p>🍼 Comfortable, stylish baby clothes for your angel,</p>
+  <p>“Or ek hi jagah par paiye Hirnaz Collections Se pyaar bhare products.” **More Items Available**</p>
+  <p>Har product mein quality, care aur affordability ka perfect combination hai. Jewellery collection mein aapko milenge classy designs jo daily wear aur special occasions dono ke liye perfect hain. Baby wear mein soft fabrics, cute prints aur safe stitching — taaki aapke bacche rahein hamesha comfortable aur stylish.</p>
+  <p>Hirnaz Collections ka mission hai aapke har moment ko banaye aur bhi khaas — chahe woh ek gift ho, ya ek everyday outfit. Hamari team har product ko pyaar se select karti hai — jaise aap apne parivaar ke liye chunte hain.</p>
+  <p>Thank you for supporting a small dream with a big heart 💖 Shop with love. Style with care.</p>
   <div class="about-benefits">
     <div class="benefit-item">
       <i class="fas fa-truck"></i>
-      <span>Local Delivery Available – Banswara mein fast delivery!</span>
+      <span>Local Delivery Available – Banswara mein fast delivery!(Free Delivery)</span>
     </div>
     <div class="benefit-item">
       <i class="fab fa-whatsapp"></i>
@@ -173,7 +153,6 @@
       <span>Limited Designs – Unique aur fast-selling items!</span>
     </div>
   </div>
-  
   <p class="about-cta"><a href="#home">Aaj hi explore karein aur apne bacchon ke liye perfect outfit chune!</a></p>
 </section>
 
@@ -205,22 +184,15 @@
       <i class="fab fa-instagram"></i>
       <a href="https://instagram.com/hirnazcollections" target="_blank">Follow us on Instagram</a>
     </div>
-
     <div class="payment-options">
       <h3>Payment Options</h3>
       <p><strong>Cash on Delivery (COD):</strong> Pay in cash when we deliver your order to your doorstep.</p>
-      <p><strong>Online Payment:</strong> Pay online, We will share QR code on your WhatsApp. Share payment screenshot on WhatsApp for order confirmation.</p>
+      <p><strong>Online Payment:</strong> Pay online, We will share QR code on your WhatsApp. Share payment screenshot on WhatsApp for order confirmation.</p> 
     </div>
-
-    <p>Have a question? Need help with your order?
-    We’re here to help! 💬
-    <br>
-    Hirnaz Collections se jude kisi bhi sawal, order update, ya feedback ke liye aap humse (9 AM - 6 PM) contact kar sakte hain.
-      
-    💡Hum koshish karte hain ki aapke message ka reply 24 hours ke andar ho jaye.
-    Thank you for shopping with us!
-    Aapka support hamare liye priceless hai 💖</p>
-    
+    <p>Have a question? Need help with your order? We’re here to help! 💬<br>
+    Hirnaz Collections se jude kisi bhi sawal, order update, ya feedback ke liye aap humse (9 AM - 6 PM) contact kar sakte hain.<br>
+    💡Hum koshish karte hain ki aapke message ka reply 24 hours ke andar ho jaye.<br>
+    Thank you for shopping with us! Aapka support hamare liye priceless hai 💖</p>
     <div class="policies">
       <h3>Return Policy</h3>
       <p>If your product is defective, Contact us on WhatsApp.</p>
@@ -231,6 +203,7 @@
     </div>
   </div>
 </section>
+
 <script src="script.js"></script>
 </body>
 </html>
