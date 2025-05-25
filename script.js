@@ -1,8 +1,7 @@
-// Order button functionality
 document.querySelectorAll('.order-button').forEach(btn => {
     btn.addEventListener('click', function () {
         const productName = this.getAttribute('data-product');
-        const price = this.previousElementSibling.textContent;
+        const price = this.parentElement.querySelector('p.price').textContent;
 
         document.getElementById('productName').value = productName;
         document.getElementById('productPrice').value = price;
@@ -82,19 +81,78 @@ navLinks.forEach(link => {
     });
 });
 
-// Products ka array with category
+// Products ka array with category and description
 const products = [
-    { name: "Gold Plated Earrings", price: "₹120", image: "images/womens-items/ruan-richard-rodrigues-s9idT2PQUt4-unsplash.jpg", category: "jewellery", isBestSeller: false },
-    { name: "Kids T-Shirt", price: "₹250", image: "images/kids-items/hector-reyes-WNQLkBUV68k-unsplash.jpg", category: "baby-clothes", isBestSeller: false },
-    { name: "Kids T-Shirt & Jeans", price: "₹499", image: "images/kids-items/the-nix-company-CkCUvwMXAac-unsplash.jpg", category: "baby-clothes", isBestSeller: false },
-    { name: "Baby Clothes Set", price: "₹699", image: "images/kids-items/eugenia-pankiv.jpg", category: "baby-clothes", isBestSeller: true },
-    { name: "Earrings", price: "₹599", image: "images/womens-items/johny-silver.jpg", category: "jewellery", isBestSeller: true }
+    { 
+        name: "Gold Plated Earrings", 
+        price: "₹149", 
+        image: "images/womens-items/ruan-richard-rodrigues-s9idT2PQUt4-unsplash.jpg", 
+        category: "jewellery", 
+        isBestSeller: false, 
+        description: "Elegant gold-plated earrings, perfect for daily wear or special occasions."
+    },
+    { 
+        name: "Ring Set", 
+        price: "₹499", 
+        image: "images/womens-items/Ring-plash.jpg", 
+        category: "jewellery", 
+        isBestSeller: true, 
+        description: "A set of stylish rings, designed to complement any outfit."
+    },
+    { 
+        name: "T-Shirt", 
+        price: "₹250", 
+        image: "images/kids-items/hector-reyes-WNQLkBUV68k-unsplash.jpg", 
+        category: "baby-clothes", 
+        isBestSeller: false, 
+        description: "Soft and comfortable cotton T-shirt for kids, ideal for daily wear."
+    },
+    { 
+        name: "T-Shirt & Jeans", 
+        price: "₹599", 
+        image: "images/kids-items/the-nix-company-CkCUvwMXAac-unsplash.jpg", 
+        category: "baby-clothes", 
+        isBestSeller: false, 
+        description: "A cute combo of T-shirt and jeans, perfect for your little one Size 0 to 5 years ."
+    },
+    { 
+        name: "Bracelet", 
+        price: "₹299", 
+        image: "images/womens-items/Bracelet-plash.jpg", 
+        category: "jewellery", 
+        isBestSeller: false, 
+        description: "Chic bracelet with a modern design, suitable for all occasions."
+    },
+    { 
+        name: "Baby Frock", 
+        price: "₹499", 
+        image: "images/kids-items/Babygirl-plash.jpg", 
+        category: "baby-clothes", 
+        isBestSeller: true, 
+        description: "Adorable baby frock with soft fabric and cute prints."
+    },
+    { 
+        name: "Baby Set", 
+        price: "₹699", 
+        image: "images/kids-items/eugenia-pankiv.jpg", 
+        category: "baby-clothes", 
+        isBestSeller: false, 
+        description: "A complete baby set with top and bottom, designed for comfort."
+    },
+    { 
+        name: "Earrings", 
+        price: "₹399", 
+        image: "images/womens-items/johny-silver.jpg", 
+        category: "jewellery", 
+        isBestSeller: false, 
+        description: "Stylish earrings to add a touch of elegance to your look."
+    }
 ];
 
 // Track current category
 let currentCategory = 'all'; // Default category
 
-// Modified filterProducts to update currentCategory
+// Modified filterProducts to update currentCategory and show description
 function filterProducts(category) {
     currentCategory = category; // Update current category
     const productGrid = document.querySelector('#home .product-grid');
@@ -114,7 +172,8 @@ function filterProducts(category) {
             <div class="product-card">
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
-                <p>${product.price}</p>
+                <p class="price">${product.price}</p>
+                <p class="product-description">${product.description}</p>
                 <button class="order-button" data-product="${product.name}">Order Now</button>
             </div>
         `;
@@ -125,7 +184,7 @@ function filterProducts(category) {
     newOrderButtons.forEach(button => {
         button.addEventListener('click', () => {
             const productName = button.getAttribute('data-product');
-            const productPrice = button.parentElement.querySelector('p').textContent;
+            const productPrice = button.parentElement.querySelector('p.price').textContent;
             document.getElementById('productName').value = productName;
             document.getElementById('productPrice').value = productPrice;
             document.getElementById('orderModal').style.display = 'block';
@@ -163,7 +222,8 @@ function searchProducts() {
             <div class="product-card">
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
-                <p>${product.price}</p>
+                <p class="price">${product.price}</p>
+                <p class="product-description">${product.description}</p>
                 <button class="order-button" data-product="${product.name}">Order Now</button>
             </div>
         `;
@@ -174,7 +234,7 @@ function searchProducts() {
     newOrderButtons.forEach(button => {
         button.addEventListener('click', () => {
             const productName = button.getAttribute('data-product');
-            const productPrice = button.parentElement.querySelector('p').textContent;
+            const productPrice = button.parentElement.querySelector('p.price').textContent;
             document.getElementById('productName').value = productName;
             document.getElementById('productPrice').value = productPrice;
             document.getElementById('orderModal').style.display = 'block';
@@ -199,7 +259,8 @@ function loadBestSellers() {
             <div class="product-card">
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
-                <p>${product.price}</p>
+                <p class="price">${product.price}</p>
+                <p class="product-description">${product.description}</p>
                 <button class="order-button" data-product="${product.name}">Order Now</button>
             </div>
         `;
@@ -210,7 +271,7 @@ function loadBestSellers() {
     newOrderButtons.forEach(button => {
         button.addEventListener('click', () => {
             const productName = button.getAttribute('data-product');
-            const productPrice = button.parentElement.querySelector('p').textContent;
+            const productPrice = button.parentElement.querySelector('p.price').textContent;
             document.getElementById('productName').value = productName;
             document.getElementById('productPrice').value = productPrice;
             document.getElementById('orderModal').style.display = 'block';
