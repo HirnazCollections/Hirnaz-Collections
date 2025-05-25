@@ -182,6 +182,7 @@ nav a:hover {
     width: 60px;
   }
 }
+
 #hero {
   background: url('images/logo-hero/hero section.jpg') no-repeat center center/cover;
   height: 400px;
@@ -249,11 +250,11 @@ nav a:hover {
 
   .hero-content {
     padding-top: 20px; /* Mobile mein thoda kam padding */
-    /* Ya agar Approach 3 use kar rahe ho, toh: */
     transform: translateY(5px); /* Mobile mein thoda kam movement */
   }
 }
-/* offer banner section */
+
+/* Offer banner section */
 .offer-banner {
   background-color: #ff69b4;
   color: white;
@@ -267,7 +268,8 @@ nav a:hover {
   margin: 0;
   font-weight: bold;
 }
- /* home section */
+
+/* Home section */
 h2 {
   text-align: center;
   color: #ff69b4;
@@ -295,30 +297,17 @@ h2 {
 }
 
 .product-grid {
-  display: flex;
-  flex-wrap: wrap; /* Laptop view ke liye wrap enable karo */
-  justify-content: center; /* Center align for laptop view */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Side by side in laptop view */
+  gap: 20px; /* Space between cards */
   padding: 20px;
-}
-
-.product-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  justify-content: space-between;
+  justify-items: center;
 }
 
 /* Mobile view ke liye horizontal scroll */
 @media (max-width: 768px) {
   .product-grid {
+    display: flex;
     flex-wrap: nowrap; /* Mobile mein side-by-side */
     overflow-x: auto; /* Horizontal scroll */
     justify-content: flex-start; /* Left se start */
@@ -326,9 +315,10 @@ h2 {
   }
 
   .product-card {
-    width: 200px;
+    width: 240px; /* Slightly increased width for mobile */
     margin: 10px;
     flex-shrink: 0; /* Cards shrink nahi honge */
+    padding: 15px; /* Increased padding for better spacing */
   }
 
   /* Optional: Scrollbar styling for mobile */
@@ -342,23 +332,24 @@ h2 {
   }
 }
 
-/* Laptop view ke liye vertical scroll (default behavior) */
-@media (min-width: 769px) {
-  .product-grid {
-    flex-wrap: wrap; /* Ensure wrap for laptop view */
-    overflow-x: hidden; /* No horizontal scroll */
-    justify-content: center; /* Center align */
-    white-space: normal; /* Normal wrapping */
-  }
-
-  .product-card {
-    width: 200px;
-    margin: 10px;
-  }
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px; /* Same height for all cards */
+  overflow: visible; /* Prevents content from being hidden */
+  box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 .product-card img {
-  height: 250px;
+  height: 250px; /* Adjusted height for better appearance */
   width: 100%;
   object-fit: cover;
   border-top-left-radius: 10px;
@@ -370,8 +361,36 @@ h2 {
   margin: 5px 0;
 }
 
+.product-description {
+  font-size: 15px;
+  color: #555;
+  margin: 5px 0;
+  line-height: 1.5;
+  overflow-wrap: break-word; /* Ensures long text wraps within the card */
+}
+
+/* Ensure description wraps properly */
+.product-description {
+    font-size: 15px; /* Smaller font size for mobile */
+    word-break: break-all; /* Force wrap long words */
+    white-space: normal; /* Allow natural line breaks */
+}
+
+/* Adjust product card for mobile view */
+@media (max-width: 768px) {
+    .product-card {
+        width: 260px; /* Increased width for more space */
+        padding: 10px; /* Adjusted padding */
+    }
+
+    .product-description {
+        font-size: 15px; /* Ensure smaller font size in mobile */
+    }
+}
+
 /* Order Button */
 .order-button {
+  display: block; /* Ensures button is visible */
   margin-top: auto;
   padding: 10px 20px;
   font-size: 16px;
@@ -380,6 +399,7 @@ h2 {
   color: #fff;
   border: none;
   border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
 .order-button:hover {
@@ -391,7 +411,8 @@ section {
   max-width: 800px;
   margin: auto;
 }
-/* best seller section */
+
+/* Best seller section */
 .best-sellers h3 {
   text-align: center;
   color: #ff69b4;
@@ -399,30 +420,17 @@ section {
 }
 
 .best-seller-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Side by side in laptop view */
+  gap: 20px; /* Space between cards */
   padding: 20px;
+  justify-items: center;
 }
 
-/* Baaki product-card ka CSS same rahega */
-.product-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  justify-content: space-between;
-}
-
+/* Mobile view ke liye horizontal scroll for best sellers */
 @media (max-width: 768px) {
   .best-seller-grid {
+    display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
@@ -430,12 +438,14 @@ section {
   }
 
   .product-card {
-    width: 200px;
+    width: 220px; /* Slightly increased width for mobile */
     margin: 10px;
     flex-shrink: 0;
+    padding: 15px; /* Increased padding for better spacing */
   }
 }
-/* testimonials section */
+
+/* Testimonials section */
 .testimonials {
   text-align: center;
   margin: 40px 0;
@@ -464,7 +474,7 @@ section {
   font-weight: bold;
 }
 
-/* newsletter section */
+/* Newsletter section */
 .newsletter {
   text-align: center;
   margin: 40px 0;
@@ -552,9 +562,9 @@ section {
   border: 2px solid #ff69b4;
   border-radius: 5px;
   transition: all 0.3s ease;
-  display: inline-block; /* Yeh ensure karta hai ki element wrap ho sake */
-  white-space: normal; /* Text ko wrap hone deta hai */
-  line-height: 1.4; /* Text ke beech thodi spacing deta hai agar wrap ho */
+  display: inline-block;
+  white-space: normal;
+  line-height: 1.4;
 }
 
 .about-cta a:hover {
@@ -565,24 +575,23 @@ section {
 /* Mobile view adjustments */
 @media (max-width: 768px) {
   .about-cta {
-    margin-top: 15px; /* Thoda kam margin mobile mein */
+    margin-top: 15px;
   }
 
   .about-cta a {
-    font-size: 14px; /* Font size kam karo mobile mein */
-    padding: 8px 15px; /* Padding adjust karo */
-    white-space: normal; /* Ensure text wraps */
-    max-width: 90%; /* Button zyada wide na ho */
-    margin: 0 auto; /* Center align */
+    font-size: 14px;
+    padding: 8px 15px;
+    white-space: normal;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
-  /* Parent container ke liye adjustments */
   #about {
-    padding: 20px; /* Kam padding mobile mein */
+    padding: 20px;
   }
 
   #about p {
-    font-size: 14px; /* About section ke paragraphs ka font size bhi adjust karo */
+    font-size: 14px;
     line-height: 1.5;
   }
 }
@@ -661,7 +670,8 @@ section {
 .close-btn:hover {
   color: #ff69b4;
 }
-/* contact section */
+
+/* Contact section */
 .contact-details {
   display: flex;
   flex-direction: column;
@@ -709,6 +719,7 @@ section {
     font-size: 18px;
   }
 }
+
 .policies { 
   text-align: center; 
   margin: 20px; 
@@ -716,4 +727,3 @@ section {
   background-color: #f9f9f9; 
   border: 1px solid #ddd; 
 }
-
